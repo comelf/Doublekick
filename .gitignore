@@ -25,3 +25,4 @@ build/
 nbbuild/
 dist/
 nbdist/
+*.db

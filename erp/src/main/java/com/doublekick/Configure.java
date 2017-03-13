@@ -40,7 +40,11 @@ public class Configure extends Thread {
 	public String jdbc_url;
 	public String db_username;
 	public String db_password;
-
+	
+	public String jpa_ddl_auto;
+	public boolean jpa_show_sql;
+	public boolean jpa_generate_ddl;
+	
 	private long last_load_time = -1;
 	public Properties property = new Properties();
 	private boolean running = true;
@@ -48,7 +52,6 @@ public class Configure extends Thread {
 	public void run() {
 		while (running) {
 			reload(false);
-			System.out.println(this.web_port);
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
@@ -100,6 +103,14 @@ public class Configure extends Thread {
 		this.build_version	= getValue("build_version", String.valueOf(new Date().getTime()));
 		this.web_port		= getInt("web.port", 8080);
 		
+		this. db_driver	= getValue("db_driver", "org.h2.Driver");
+		this. jdbc_url 		= getValue("jdbc_url", "jdbc_url=jdbc:mysql://127.0.0.1:3306");
+		this. db_username = getValue("db_username", "doublekick");
+		this. db_password	=	getValue("db_password", "d@ub1ekic&");
+		
+		this.jpa_ddl_auto = getValue("jpa_ddl_auto", "validate");
+		this.jpa_show_sql = getBoolean("jpa_show_sql", false);
+		this.jpa_generate_ddl	=getBoolean("jpa_generate_ddl", false);
 	}
 
 	public String getValue(String key) {

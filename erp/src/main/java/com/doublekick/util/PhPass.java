@@ -7,9 +7,11 @@ import java.security.SecureRandom;
 import java.util.Arrays;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-public class PhPass {
+public class PhPass  implements PasswordEncoder{
+	private static final String SALT = "S@LT+33";
 	private static String itoa64 = "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private int iterationCountLog2;
     private SecureRandom randomGen;
@@ -110,7 +112,7 @@ public class PhPass {
         }
     }
 
-    public String HashPassword(String password) {
+    public String hashPassword(String password) {
         byte random[] = new byte[6];
         this.randomGen.nextBytes(random);
         // Unportable hashes (Blowfish, EXT_DES) could be added here, but I won't do this.
@@ -121,7 +123,7 @@ public class PhPass {
         return "*";
     }
 
-    public boolean CheckPassword(String password, String storedHash) {
+    public boolean checkPassword(String password, String storedHash) {
         String hash = cryptPrivate(password, storedHash);
         MessageDigest md = null;
         if (hash.startsWith("*")) {	// If not phpass, try some algorythms from unix crypt()
@@ -156,5 +158,15 @@ public class PhPass {
         }
         return hash.equals(storedHash);
     }
+
+	@Override
+	public String encode(CharSequence rawPassword) {
+		return hashPassword(rawPassword.toString() +SALT);
+	}
+
+	@Override
+	public boolean matches(CharSequence rawPassword, String encodedPassword) {
+		return this.checkPassword(rawPassword.toString() + SALT, encodedPassword);
+	}
 }
 
