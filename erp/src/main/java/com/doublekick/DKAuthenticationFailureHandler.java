@@ -26,7 +26,7 @@ public class DKAuthenticationFailureHandler implements AuthenticationFailureHand
 			request.setAttribute("account", request.getParameter("account"));
 		}
 		
-		request.getRequestDispatcher("/login").forward(request, response);
+		request.getRequestDispatcher("/account/login").forward(request, response);
 	}
 
 }

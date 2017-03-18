@@ -20,7 +20,7 @@
                         <div class="subtitle">Sign in to your account</div>                        
                     </div>
                     <div class="app-login-box-container">
-                        <form action="/loginp" method="post">
+                        <form action="/account/loginp" method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="account" placeholder="Login Id" value="${account}">
                             </div>

@@ -58,7 +58,7 @@
                                                 <li><a href="#"><span class="icon-envelope"></span> Messages <span class="label label-danger pull-right">+24</span></a></li>
                                                 <li><a href="#"><span class="icon-users"></span> Contacts <span class="label label-default pull-right">76</span></a></li>
                                                 <li class="divider"></li>
-                                                <li><a href="/logout"><span class="icon-exit"></span> Log Out</a></li> 
+                                                <li><a href="/account/logout"><span class="icon-exit"></span> Log Out</a></li> 
                                             </ul>
                                         </div>                    
                                     </div>
@@ -145,8 +145,8 @@
 	    <script type="text/javascript" src="/js/lib/bootstrap/bootstrap.min.js"></script>
 	    <script type="text/javascript" src="/js/lib/moment/moment.min.js"></script>>
 	    <script type="text/javascript" src="/js/lib/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
-	    <script type="text/javascript" src="js/app.js"></script>
-	    <script type="text/javascript" src="js/app_plugins.js"></script> 
+	    <script type="text/javascript" src="/js/app.js"></script>
+	    <script type="text/javascript" src="/js/app_plugins.js"></script> 
 	    
 	    <sitemesh:write property="page.local_script"/>
 	</div>

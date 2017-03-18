@@ -1,0 +1,37 @@
+.account-create {
+	width: 650px;
+	margin: 50px auto;
+}
+
+.account-create form .hyphen {
+	float: left;
+	padding-top: 9px;
+	font-weight: bold;
+}
+
+.app .account-create .account-create-box-title {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 0px 30px;
+}
+
+.app .account-create .account-create-box-title .title {
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: 400;
+	color: #1B2431;
+	margin-bottom: 5px;
+}
+
+.app .account-create .account-create-box-title .subtitle {
+	font-size: 14px;
+	color: #7F8FA4;
+}
+.app .account-create form .btn-create{
+	font-size: 18px;
+    padding: 13px 60px;
+    margin-left: 21px;
+    margin-top: 40px;
+}

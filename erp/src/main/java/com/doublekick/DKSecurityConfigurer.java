@@ -38,19 +38,19 @@ public class DKSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-			.antMatchers("/login","/loginp", "/create").permitAll()
-			.antMatchers("/**").authenticated();
+			.antMatchers("/account/login","/account/loginp", "/account/create").permitAll()
+			.antMatchers("/academy/**").authenticated();
 		
 		http.formLogin()
-			.loginProcessingUrl("/loginp")
-			.loginPage("/login")
-			.defaultSuccessUrl("/")
+			.loginProcessingUrl("/account/loginp")
+			.loginPage("/account/login")
+			.defaultSuccessUrl("/amademy/")
 			.usernameParameter("account")
 			.passwordParameter("password")
 			.failureHandler(authenticationFailureHandler());
 
 		http.logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutRequestMatcher(new AntPathRequestMatcher("/account/logout"))
 				.logoutSuccessUrl("/");
 	}
 

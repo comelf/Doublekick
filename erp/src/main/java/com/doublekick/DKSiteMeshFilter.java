@@ -8,11 +8,11 @@ public class DKSiteMeshFilter extends  ConfigurableSiteMeshFilter {
 
 	@Override
 	protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
-		builder.addDecoratorPath("/*", "/WEB-INF/jsp/decorator.jsp");
+		builder.addDecoratorPath("/academy/*", "/WEB-INF/jsp/academy/decorator.jsp");
 		builder.addTagRuleBundle(new Sm2TagRuleBundle());
-		builder.addExcludedPath("/login");
-		builder.addExcludedPath("/loginp");
-		builder.addExcludedPath("/create");
+		builder.addExcludedPath("/account/login");
+		builder.addExcludedPath("/account/loginp");
+		builder.addExcludedPath("/account/create");
 		super.applyCustomConfiguration(builder);
 	}
 }
