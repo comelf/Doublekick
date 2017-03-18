@@ -8,6 +8,7 @@
 	<title>이단옆차기 실용음악 학원</title>
 	
 	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/academy.css">
 
 	<sitemesh:write property="head" />
 </head>
@@ -45,7 +46,7 @@
                         <ul class="app-header-buttons pull-right">
                             <li>
                                 <div class="contact contact-rounded contact-bordered contact-lg contact-ps-controls">
-                                    <img src="assets/images/users/user_1.jpg" alt="John Doe">
+                                    <img src="/assets/images/users/user_1.jpg" alt="John Doe">
                                     <div class="contact-container">
                                         <a href="#">홍길동</a>
                                         <span>보컬 강사</span>
@@ -71,15 +72,16 @@
                 
                 <!-- START APP CONTENT -->
                 <div class="app-content">
-                    <div class="app-navigation-horizontal margin-bottom-15">    
+                    <div class="app-navigation-horizontal">    
                         <div class="container container-boxed">
                             <nav>
                                 <ul>
                                     <li class="active">
                                         <a href="index.html"><span class="icon-users"></span> 학생관리</a>
                                         <ul>
-                                            <li class="active"><a href="#">출결관리</a></li>
+                                            <li class="active"><a href="#">학생조회</a></li>
                                             <li><a href="#">수업관리</a></li>
+                                            <li><a href="#">출결관리</a></li>
                                             <li><a href="#">성적관리</a></li>
                                             <li><a href="#">단체처리</a></li>
                                             <li><a href="#">학생정보삭제</a></li>
@@ -88,6 +90,7 @@
                                     <li>
                                         <a href="#"><span class="icon-apartment"></span> 학원관리</a>                
                                         <ul>
+                                        	<li><a href="#">수업관리</a></li>
                                             <li><a href="#">강사관리</a></li>
                                             <li><a href="#">연습실 현황</a></li>
                                             <li><a href="#">스케줄 관리</a></li>
@@ -143,8 +146,11 @@
 		<script type="text/javascript" src="/js/lib/jquery/jquery-migrate.min.js"></script>
 	    <script type="text/javascript" src="/js/lib/jquery/jquery-ui.min.js"></script>
 	    <script type="text/javascript" src="/js/lib/bootstrap/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="/js/lib/moment/moment.min.js"></script>>
+	    <script type="text/javascript" src="/js/lib/moment/moment.min.js"></script>
+	    <script type="text/javascript" src="/js/lib/bootstrap-select/bootstrap-select.js"></script>
+	    <script type="text/javascript" src="/js/lib/select2/select2.full.min.js"></script>
 	    <script type="text/javascript" src="/js/lib/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+	    <script type="text/javascript" src="/js/lib/multiselect/jquery.multi-select.js"></script>
 	    <script type="text/javascript" src="/js/app.js"></script>
 	    <script type="text/javascript" src="/js/app_plugins.js"></script> 
 	    

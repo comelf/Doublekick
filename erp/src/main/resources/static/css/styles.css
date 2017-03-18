@@ -21187,6 +21187,9 @@ a.editable-click.editable-disabled:hover {
 .text-danger {
   color: #F04E51 !important;
 }
+.text-xs {
+  font-size: 9px;
+}
 .text-sm {
   font-size: 11px;
 }
@@ -26055,8 +26058,6 @@ input[type="file"] {
   float: left;
   width: 100%;
   padding: 10px 15px 0px;
-  background: #FFF;
-  border-bottom: 1px solid #DBE0E4;
 }
 .app .app-content-tabs > ul {
   float: left;
@@ -26659,6 +26660,12 @@ input[type="file"] {
   }
 }
 @media (max-width: 1200px) {
+  .app .container.container-boxed {
+    float: left;
+    width: 100%;
+  }
+}
+@media (max-width: 2400px) {
   .app .container.container-boxed {
     float: left;
     width: 100%;

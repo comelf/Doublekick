@@ -179,8 +179,57 @@
 			</div>
     	</div>
     	<div class="col-md-5 margin-top-10">
+    		<div class="col-md-4">
+                                <!-- MESSAGE -->
+                                <div class="block block-condensed block-highlight-hover">
+                                    <div class="app-heading app-heading-small margin-bottom-0">                                        
+                                        <div class="title">
+                                            <div class="contact contact-rounded contact-bordered contact-lg margin-bottom-0">
+                                                <img src="assets/images/users/user_1.jpg" alt="">
+                                                <div class="contact-container">
+                                                    <a href="#">John Doe</a>
+                                                    <span>UI/UX Designer</span>
+                                                </div>
+                                            </div>
+                                        </div>                 
+                                        <div class="heading-elements">                                            
+                                            <div class="dropdown">                                                
+                                                <button class="btn btn-default btn-icon btn-sm" data-toggle="dropdown" aria-expanded="false"><span class="fa fa-cog"></span></button>
+                                                <ul class="dropdown-menu dropdown-left"> 
+                                                    <li><a href="#"><span class="icon-arrow-right-circle"></span> Send Message</a></li> 
+                                                    <li><a href="#"><span class="icon-menu-circle"></span> User Information</a></li> 
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><span class="icon-cross-circle"></span> Delete User</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>                
+                                    </div>
+                                    <div class="block-content">
+                                        <p>A sole proprietorship, also known as a sole trader, is owned by one person and operates for their benefit.</p>
+                                    </div>
+                                    
+                                </div>
+                                <!-- END MESSAGE -->
+                            </div>
+    	
     		<div class="block block-condensed padding-top-15">
-    			
+    			<div class="col-md-12">
+	                 <select class="multiselect form-control" multiple="multiple">
+	                      <optgroup label="Option group 1">
+	                         <option>Lorem ipsum dolor</option>
+	                         <option>Sit ament nopilous</option>
+	                         <option>Toi samo tuda</option>
+	                     </optgroup>
+	                     <optgroup label="Option group 2">
+	                         <option>Mauris dolor nulla</option>                                        
+	                         <option>Phasellus tincidunt</option>                                        
+	                         <option>Nulla ante metus</option>
+	                         <option>Sed id arcu mi</option>
+	                         <option>Donec euismod ullamcorper</option>
+	                         <option>Phasellus elementum</option>
+	                     </optgroup>
+	                 </select>
+	             </div>
     		</div>
 		</div>
 	</div>

@@ -1,0 +1,10 @@
+.app-content-tabs.tabs-sm {
+	padding: 0px 15px;
+}
+.app-content-tabs.tabs-sm > ul > li > a {
+	padding: 5px 10px;
+	line-height: 15px;
+}
+.app-content-tab .accordion-list .panel-heading{
+	line-height: 30px;
+}
