@@ -1,4 +1,4 @@
-package com.doublekick.entity;
+package com.doublekick.entity.academy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

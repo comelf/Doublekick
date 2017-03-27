@@ -76,48 +76,49 @@
                         <div class="container container-boxed">
                             <nav>
                                 <ul>
-                                    <li class="active">
-                                        <a href="index.html"><span class="icon-users"></span> 학생관리</a>
+                                    <li class="nav-li-std">
+                                        <a href="#"><span class="icon-users"></span> 학생관리</a>
                                         <ul>
-                                            <li class="active"><a href="#">학생조회</a></li>
-                                            <li><a href="#">수업관리</a></li>
-                                            <li><a href="#">출결관리</a></li>
-                                            <li><a href="#">성적관리</a></li>
-                                            <li><a href="#">단체처리</a></li>
-                                            <li><a href="#">학생정보삭제</a></li>
+                                            <li class="li-menu-std"><a href="/academy/student">학생조회</a></li>
+                                            <li class="li-menu-std-lesson"><a href="/academy/student/lesson">수업관리</a></li>
+                                            <li class="li-menu-std-attendance"><a href="/academy/student/attendance">출결관리</a></li>
+                                            <li class="li-menu-std-grade"><a href="/academy/student/grade">성적관리</a></li>
+                                            <li class="li-menu-std-group"><a href="/academy/student/group">단체처리</a></li>
+                                            <li class="li-menu-std-management"><a href="/academy/student/management">학생정보삭제</a></li>
                                         </ul>
                                     </li>
-                                    <li>
+                                    <li class="nav-li-mgnt">
                                         <a href="#"><span class="icon-apartment"></span> 학원관리</a>                
                                         <ul>
-                                        	<li><a href="#">수업관리</a></li>
-                                            <li><a href="#">강사관리</a></li>
-                                            <li><a href="#">연습실 현황</a></li>
-                                            <li><a href="#">스케줄 관리</a></li>
+                                        	<li class="li-aca-mgnt-lession"><a href="/academy/management/lession">수업관리</a></li>
+                                            <li class="li-aca-mgnt-package"><a href="/academy/management/package">패키지관리</a></li>
+                                            <li class="li-aca-mgnt-teacher"><a href="/academy/management/teacher">강사관리</a></li>
+                                            <li class="li-aca-mgnt-room"><a href="/academy/management/room">연습실 현황</a></li>
+                                            <li class="li-aca-mgnt-schedule"><a href="/academy/management/schedule">스케줄 관리</a></li>
                                         </ul>
                                     </li>
-                                    <li>
+                                    <li class="nav-li-acc">
                                         <a href="#"><span class="icon-laptop"></span> 수납관리</a>                
                                         <ul>
-                                            <li><a href="#">수납현황</a></li>
-                                            <li><a href="#">미납현황</a></li>
-                                            <li><a href="#">회계분석</a></li>
+                                            <li class="li-aca-mgnt-payment"><a href="/academy/payment">수납현황</a></li>
+                                            <li class="li-aca-mgnt-default"><a href="/academy/default">미납현황</a></li>
+                                            <li class="li-aca-mgnt-accountring"><a href="/academy/accounting">회계분석</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#"><span class="icon-chart-bars"></span>통계분석</a>                
                                         <ul>
-                                            <li><a href="#">종합현황</a></li>
-                                            <li><a href="#">지점별 현황</a></li>
-                                            <li><a href="#">지점별 비교</a></li>
+                                            <li class="li-aca-stat-total"><a href="/academy/statistic/total">종합현황</a></li>
+                                            <li class="li-aca-stat-branch"><a href="/academy/statistic/branch">지점별 현황</a></li>
+                                            <li class="li-aca-stat-branch-comp"><a href="/academy/statistic/branch/comparison">지점별 비교</a></li>
                                         </ul>
                                     </li>
-                                    <li>
+                                    <li class="nav-li-sys">
                                         <a href="#"><span class="icon-calendar-full"></span>시스템</a>                
                                         <ul>
-                                            <li><a href="#">공지사항</a></li>
-                                            <li><a href="#">시스템 설정</a></li>
-                                            <li><a href="#">시스템 로그</a></li>
+                                            <li><a href="/academy/notice">공지사항</a></li>
+                                            <li><a href="/academy/config">시스템 설정</a></li>
+                                            <li><a href="/academy/syslog">시스템 로그</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -151,6 +152,8 @@
 	    <script type="text/javascript" src="/js/lib/select2/select2.full.min.js"></script>
 	    <script type="text/javascript" src="/js/lib/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
 	    <script type="text/javascript" src="/js/lib/multiselect/jquery.multi-select.js"></script>
+	    <script type="text/javascript" src="/js/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/js/lib/bootstrap-daterange/daterangepicker.js"></script>
 	    <script type="text/javascript" src="/js/app.js"></script>
 	    <script type="text/javascript" src="/js/app_plugins.js"></script> 
 	    

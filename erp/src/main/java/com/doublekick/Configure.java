@@ -45,6 +45,9 @@ public class Configure extends Thread {
 	public boolean jpa_show_sql;
 	public boolean jpa_generate_ddl;
 	
+	public String image_path;
+	
+	
 	private long last_load_time = -1;
 	public Properties property = new Properties();
 	private boolean running = true;
@@ -111,6 +114,9 @@ public class Configure extends Thread {
 		this.jpa_ddl_auto = getValue("jpa_ddl_auto", "validate");
 		this.jpa_show_sql = getBoolean("jpa_show_sql", false);
 		this.jpa_generate_ddl	=getBoolean("jpa_generate_ddl", false);
+		
+		this.image_path = getValue("image_path",  System.getProperty("bw.server.home", ".") + "/images");
+		
 	}
 
 	public String getValue(String key) {

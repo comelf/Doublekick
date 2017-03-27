@@ -1,4 +1,4 @@
-package com.doublekick.entity;
+package com.doublekick.entity.academy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,5 +22,10 @@ public class Academy {
 	
 	@Column(unique=true, nullable=false)
 	private String domain;
+	
+	public Academy(String name, String domain){
+		this.name = name;
+		this.domain = domain;
+	}
 	
 }

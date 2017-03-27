@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.doublekick.entity.academy.AcademyBranch;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -31,16 +33,21 @@ public class Account {
 	private boolean admin = false;
 
 	@ManyToOne
+	@JoinColumn(name = "academyBranchId", nullable = false)
+	private AcademyBranch academyBranch;
+	
+	@ManyToOne
 	@JoinColumn(name = "accountStatusId", nullable = false)
 	private AccountStatus status;
 
-	public Account(String loginId, String hashPassword, String name, String email, boolean isAdmin, AccountStatus status) {
+	public Account(String loginId, String hashPassword, String name, String email, boolean isAdmin, AccountStatus status, AcademyBranch academyBranch) {
 		this.loginId = loginId;
 		this.password = hashPassword;
 		this.name = name;
 		this.email = email;
 		this.admin = isAdmin;
 		this.status = status;
+		this.academyBranch = academyBranch;
 		this.createDate = new Date();
 	}
 

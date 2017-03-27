@@ -11,7 +11,6 @@
 		        <ul>                            
 		            <li><a href="#tab-1" class="text-sm active">검색</a></li>
 		            <li><a href="#tab-2" class="text-sm">강좌별</a></li>
-		            <li><a href="#tab-3" class="text-sm">강사별</a></li>
 		        </ul>
 		    </div>
     		<div class="block padding-10 ">
@@ -32,20 +31,20 @@
 			                 <div class="list-group">                                        
 			                    <div class="list-group-item text-sm active">
 			                    	<div class="row">
-			                    		<div class="col-md-5">고길동</div>
-			                    		<div class="col-md-7 text-center">일번 고등학교</div>
+			                    		<div class="col-md-5">김선생</div>
+			                    		<div class="col-md-7 text-center">전임 강사</div>
 			                    	</div>
 			                    </div>
 			                    <div class="list-group-item text-sm">
 			                    	<div class="row">
-			                    		<div class="col-md-5">고길동</div>
-			                    		<div class="col-md-7 text-center">이번 고등학교</div>
+			                    		<div class="col-md-5">이선생</div>
+			                    		<div class="col-md-7 text-center">시간 강사</div>
 			                    	</div>
 			                    </div>
 			                    <div class="list-group-item text-sm">
 			                    	<div class="row">
-			                    		<div class="col-md-5">고길동</div>
-			                    		<div class="col-md-7 text-center">삼번 고등학교</div>
+			                    		<div class="col-md-5">박강사</div>
+			                    		<div class="col-md-7 text-center">강사 대학</div>
 			                    	</div>
 			                    </div>                                                                                                                                                                
 			                 </div> 
@@ -154,8 +153,8 @@
 		                 <img src="/assets/images/users/user_4.jpg" alt="">
 		                 <div class="contact-container">
 		                     <a href="#">고길동</a>
-		                     <span>SEO Specialist</span>
-		                     <p>Im very creative person</p>
+		                     <!-- <span>SEO Specialist</span>
+		                     <p>Im very creative person</p> -->
 		                 </div>
 		                 
 		                 </div>
@@ -165,17 +164,12 @@
 		                    <div class="list-group-item text-xs"><span class="fa fa-envelope"></span> abcde@domain.com</div>                                                                                                                                                                
 		                 </div> 
 		            </div>
-		                
-	                
-	                    <div class="col-md-6">
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-pencil"></span>메모</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-smartphone"></span>메시지</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-cog"></span>정보수정</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-clock"></span>수강현황</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-smartphone"></span>수강료현황</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-calendar-full"></span>출석현황</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-flag"></span>시험현황</button>
-	                	</div>
+                    <div class="col-md-6">
+	                    <button type="button" class="btn btn-default btn-block"><span class="icon-smartphone"></span>메시지</button>
+	                    <button type="button" class="btn btn-default btn-block"><span class="icon-cog"></span>정보수정</button>
+	                    <button type="button" class="btn btn-default btn-block"><span class="icon-smartphone"></span>수업현황</button>
+	                    <button type="button" class="btn btn-default btn-block"><span class="icon-clock"></span>강의이력</button>
+                	</div>
 			</div>
     	</div>
     	<div class="col-md-5 margin-top-10">
@@ -190,6 +184,9 @@
 <content tag="local_script">
 	<script>
 		$(function() {
+			$('.app-navigation-horizontal .nav-li-mgnt').addClass('active');
+			$('.app-navigation-horizontal .li-aca-mgnt-teacher').addClass('active');
+			
 			$('.app-content-tabs a:first').tab('show');
 		});
 	</script>

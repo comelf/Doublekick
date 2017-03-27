@@ -147,98 +147,120 @@
 	        	</div>
 			</div>
     	</div>
-    	<div class="col-md-4 margin-top-10">
+    	<div class="col-md-3 margin-top-10">
     		<div class="block block-condensed padding-top-15 padding-bottom-15">
-		             <div class="col-md-6">
-		                 <div class="contact contact-bordered contact-single">
-		                 <img src="/assets/images/users/user_4.jpg" alt="">
-		                 <div class="contact-container">
-		                     <a href="#">고길동</a>
-		                     <span>SEO Specialist</span>
-		                     <p>Im very creative person</p>
-		                 </div>
-		                 
-		                 </div>
-		                 <div class="list-group">                                        
-		                    <div class="list-group-item text-xs"><span class="fa fa-map-marker"></span> 서울시 강남구 123-456</div>
-		                    <div class="list-group-item text-xs"><span class="fa fa-phone"></span> 010-1234-5678</div>
-		                    <div class="list-group-item text-xs"><span class="fa fa-envelope"></span> abcde@domain.com</div>                                                                                                                                                                
-		                 </div> 
-		            </div>
-		                
-	                
-	                    <div class="col-md-6">
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-pencil"></span>메모</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-smartphone"></span>메시지</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-cog"></span>정보수정</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-clock"></span>수강현황</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-smartphone"></span>수강료현황</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-calendar-full"></span>출석현황</button>
-		                    <button type="button" class="btn btn-default btn-block"><span class="icon-flag"></span>시험현황</button>
-	                	</div>
+	            <div class="app-heading app-heading-small">                                
+	                <div class="title">
+	                    <h5>보컬전공</h5>
+	                    <!-- <p>desc</p> -->
+	                </div>
+	            </div>
+	            
+	            <div class="block-content">
+	                <div class="row">
+	                    <div class="col-md-12 lesson">
+	                        <div class="app-widget-tile">
+	                            <div class="line">
+	                                <div class="title">과목 : 보컬</div>
+	                                 <div class="subtitle pull-right">
+	                                	<div class="btn-group bootstrap-select bs-select btn-xs">
+		                                	<select class="bs-select select-teacher">
+		                                        <option>김철수</option>
+		                                        <option>이작가</option>
+		                                        <option>나강사</option>                                        
+	                                    	</select>
+                                    	</div>
+	                                </div>
+	                                <div class="subtitle pull-right">강사 : </div>
+	                            </div>                                        
+	                            <div class="intval">1 / 4</div>                                        
+	                            <div class="line">
+	                               	<div class="subtitle pull-right">
+	                            		<button class="btn btn-default btn-sm">수업등록</button>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-md-12 lesson">
+	                        <div class="app-widget-tile">
+	                            <div class="line">
+	                                <div class="title">과목 : 댄스</div>
+	                            </div>                                        
+	                            <div class="intval">5 / 4</div>                                        
+	                            <div class="line">
+	                                <div class="subtitle pull-right">
+	                                	<button class="btn btn-default btn-sm">수업등록</button>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-md-12 lesson">
+	                        <div class="app-widget-tile">
+	                            <div class="line">
+	                                <div class="title">과목 : 댄스</div>
+	                            </div>                                        
+	                            <div class="intval"><span class="text-danger">-1</span> / <span>4</span></div>                                        
+	                            <div class="line">
+	                                <div class="subtitle pull-right">
+	                                	<button class="btn btn-default btn-sm">수업등록</button>
+									</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
 			</div>
     	</div>
-    	<div class="col-md-5 margin-top-10">
-    		<div class="col-md-4">
-                                <!-- MESSAGE -->
-                                <div class="block block-condensed block-highlight-hover">
-                                    <div class="app-heading app-heading-small margin-bottom-0">                                        
-                                        <div class="title">
-                                            <div class="contact contact-rounded contact-bordered contact-lg margin-bottom-0">
-                                                <img src="assets/images/users/user_1.jpg" alt="">
-                                                <div class="contact-container">
-                                                    <a href="#">John Doe</a>
-                                                    <span>UI/UX Designer</span>
-                                                </div>
-                                            </div>
-                                        </div>                 
-                                        <div class="heading-elements">                                            
-                                            <div class="dropdown">                                                
-                                                <button class="btn btn-default btn-icon btn-sm" data-toggle="dropdown" aria-expanded="false"><span class="fa fa-cog"></span></button>
-                                                <ul class="dropdown-menu dropdown-left"> 
-                                                    <li><a href="#"><span class="icon-arrow-right-circle"></span> Send Message</a></li> 
-                                                    <li><a href="#"><span class="icon-menu-circle"></span> User Information</a></li> 
-                                                    <li class="divider"></li>
-                                                    <li><a href="#"><span class="icon-cross-circle"></span> Delete User</a></li> 
-                                                </ul>
-                                            </div>
-                                        </div>                
-                                    </div>
-                                    <div class="block-content">
-                                        <p>A sole proprietorship, also known as a sole trader, is owned by one person and operates for their benefit.</p>
-                                    </div>
-                                    
-                                </div>
-                                <!-- END MESSAGE -->
-                            </div>
-    	
+    	<div class="col-md-6 margin-top-10">
     		<div class="block block-condensed padding-top-15">
-    			<div class="col-md-12">
-	                 <select class="multiselect form-control" multiple="multiple">
-	                      <optgroup label="Option group 1">
-	                         <option>Lorem ipsum dolor</option>
-	                         <option>Sit ament nopilous</option>
-	                         <option>Toi samo tuda</option>
-	                     </optgroup>
-	                     <optgroup label="Option group 2">
-	                         <option>Mauris dolor nulla</option>                                        
-	                         <option>Phasellus tincidunt</option>                                        
-	                         <option>Nulla ante metus</option>
-	                         <option>Sed id arcu mi</option>
-	                         <option>Donec euismod ullamcorper</option>
-	                         <option>Phasellus elementum</option>
-	                     </optgroup>
-	                 </select>
-	             </div>
+    			<div class="app-heading app-heading-small">                                
+	                <div class="title">
+	                    <h5>보컬A </h5>
+	                    <p>강사 : 김철수</p>
+	                </div>
+	            </div>
+	            
+	            <div class="block-content">
+	                <div class="row">
+	                    <div class="col-md-12">
+			    			<label>수업시간</label>
+				               <div class="input-group">
+				                   <div class="input-group-addon">
+				                       <span class="fa fa-calendar"></span>
+				                   </div>
+				                   <input type="text" class="form-control datetimerange" value="09/01/2016 2:00 PM - 09/20/2016 2:00 PM">
+				               </div>
+	                    </div>
+	                    <div class="col-md-12">
+			    			<label>강의실</label>
+				               <div class="input-group">
+				                   <div class="btn-group bootstrap-select bs-select btn-xs">
+	                                	<select class="bs-select select-teacher">
+	                                        <option>ROOM-01</option>
+	                                        <option>ROOM-02</option>
+	                                        <option>ROOM-03</option>                                        
+                                    	</select>
+                                   	</div>
+				               </div>
+	                    </div>
+	                     <div class="col-md-12">
+				               <div class="input-group">
+				                   <button class="btn btn-danger pull-right">저장</button>
+				               </div>
+	                    </div>
+	                </div>
+	            </div>
     		</div>
 		</div>
 	</div>
-
 
 <!-- END BLOCk -->                                                
 <content tag="local_script">
 	<script>
 		$(function() {
+			$('.app-navigation-horizontal .nav-li-std').addClass('active');
+			$('.app-navigation-horizontal .li-menu-std-lesson').addClass('active');
+			
 			$('.app-content-tabs a:first').tab('show');
 		});
 	</script>

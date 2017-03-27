@@ -25,7 +25,7 @@ public class DKSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/css/**", "/js/**", "/assets/**");
+		web.ignoring().antMatchers("/css/**", "/js/**", "/assets/**","/images/**");
 	}
 	
     @Autowired
@@ -39,12 +39,13 @@ public class DKSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 			.antMatchers("/account/login","/account/loginp", "/account/create").permitAll()
-			.antMatchers("/academy/**").authenticated();
+			.antMatchers("/academy/**").authenticated()
+			.antMatchers("/academy/media/photoUpload").authenticated().and().csrf().disable().httpBasic();
 		
 		http.formLogin()
 			.loginProcessingUrl("/account/loginp")
 			.loginPage("/account/login")
-			.defaultSuccessUrl("/amademy/")
+			.defaultSuccessUrl("/academy/")
 			.usernameParameter("account")
 			.passwordParameter("password")
 			.failureHandler(authenticationFailureHandler());

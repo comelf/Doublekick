@@ -2,6 +2,7 @@ package com.doublekick;
 
 import java.util.Properties;
 
+import javax.servlet.MultipartConfigElement;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
@@ -24,6 +26,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.resource.ResourceUrlEncodingFilter;
 
@@ -38,6 +43,12 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter{
 
 	Configure conf = Configure.getInstance();
 	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/images/**").addResourceLocations("./images/").resourceChain(true);
+		super.addResourceHandlers(registry);
+	}
+	
 //	@Override
 //	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 //		VersionResourceResolver versionResourceResolver = new VersionResourceResolver()
@@ -50,6 +61,19 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter{
 //				.addResolver(versionResourceResolver);
 //		super.addResourceHandlers(registry);
 //	}
+	
+	@Bean
+	public MultipartConfigElement multipartConfigElement() {
+	    MultipartConfigFactory factory = new MultipartConfigFactory();
+	    factory.setMaxFileSize("10MB");
+	    factory.setMaxRequestSize("10MB");
+	    return factory.createMultipartConfig();
+	}
+
+	@Bean
+	public MultipartResolver multipartResolver() {
+	    return new StandardServletMultipartResolver();
+	}
 	
 	@Bean
 	public ResourceUrlEncodingFilter resourceUrlEncodingFilter() {
