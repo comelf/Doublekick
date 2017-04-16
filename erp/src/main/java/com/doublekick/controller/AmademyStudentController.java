@@ -3,11 +3,16 @@ package com.doublekick.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,6 +21,8 @@ import com.doublekick.service.StudentService;
 
 @Controller
 public class AmademyStudentController {
+	
+	private Logger log = LoggerFactory.getLogger(AmademyStudentController.class);
 	
 	@Autowired
 	StudentService studentService;
@@ -83,6 +90,21 @@ public class AmademyStudentController {
 		return "academy/student/add";
 	}
 	
+	@RequestMapping(value="/academy/{branchId}/student/add", method=RequestMethod.POST)
+	public String academyStudentAdd(@PathParam("branchId")Integer branchId, @Valid Student student, BindingResult bindingResult, Model model, HttpServletRequest request){
+		
+		if(bindingResult.hasErrors()){
+			List<ObjectError> errors = bindingResult.getAllErrors();
+			for (ObjectError error : errors){
+				log.debug("error : {}", error.getDefaultMessage());
+			}
+			return "academy/student/add";
+		}
+		
+		System.out.println(student);
+		
+		return "academy/student/add";
+	}
 	
 	/*
 	 *  포토 업로드 Test 임시 페이

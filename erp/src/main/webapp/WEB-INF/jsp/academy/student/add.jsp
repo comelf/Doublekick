@@ -15,15 +15,16 @@
 	             </div>                                
 	         </div>
 	               
-	         <form:form class="form-horizontal" modelAttribute="student">
+	         <form:form class="form-horizontal" modelAttribute="student" method="post" action="">
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">이름</label>
 	                 <div class="col-md-5">
-	                 	<form:input path="name" cssClass="form-control" maxlength="20"/>
+	                 	<form:input path="name" cssClass="form-control" maxlength="20" required="required"/>
+	                 	<form:errors path="name" cssClass="error" />
 	                 </div>
 	                  <label class="col-md-2 control-label">성별</label>
 	                 <div class="col-md-3">
-	                 	<form:select path="gender" cssClass="form-control">
+	                 	<form:select path="gender" cssClass="form-control" required="required">
 	                 		<form:option value="male">남자</form:option>
 	                 		<form:option value="female">여자</form:option>
 	                 	</form:select>
@@ -32,49 +33,53 @@
 	         	<div class="form-group">
 	                 <label class="col-md-2 control-label">학교</label>
 	                 <div class="col-md-5">
-	                     <input type="text" class="form-control">
+	                 	<form:input path="school" cssClass="form-control" maxlength="50" required="required"/>
+	                 	<form:errors path="school" cssClass="error" />
 	                 </div>
 	                 <label class="col-md-2 control-label">학년</label>
 	                 <div class="col-md-3">
-	                     <select class="form-control">
-                             <option value="1">1학년</option>
-                             <option value="2">2학년</option>
-                             <option value="3">3학년</option>
-                             <option value="4">4학년</option>
-                             <option value="5">5학년</option>
-                             <option value="6">6학년</option>
-                         </select>
+	                 	<form:select path="schoolYear" cssClass="form-control">
+	                 		<form:option value="1">1학년</form:option>
+                            <form:option value="2">2학년</form:option>
+                            <form:option value="3">3학년</form:option>
+                            <form:option value="4">4학년</form:option>
+                            <form:option value="5">5학년</form:option>
+                            <form:option value="6">6학년</form:option>
+	                 	</form:select>
 	                 </div>
 	             </div>    
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">생년월일</label>
 	                 <div class="col-md-5">
-	                     <input type="text" class="form-control bs-datepicker">
+	                 	<form:input path="birthday" cssClass="form-control bs-datepicker" maxlength="50" required="required"/>
+	                 	<form:errors path="birthday" cssClass="error" />
 	                 </div>
 	             </div>
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">등록일</label>
 	                 <div class="col-md-5">
-	                     <input type="text" class="form-control bs-datepicker">
+	                     <form:input path="joinday" cssClass="form-control bs-datepicker" maxlength="50" required="required"/>
+	                     <form:errors path="joinday" cssClass="error" />
 	                 </div>
 	             </div>
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">휴대전화</label>
 	                 <div class="col-md-5">
-	                     <input type="text" class="form-control">
+	                 	<form:input path="phone" cssClass="form-control" maxlength="50" required="required"/>
+	                 	<form:errors path="phone" cssClass="error" />
 	                 </div>
 	             </div>
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">집전화</label>
 	                 <div class="col-md-5">
-	                     <input type="text" class="form-control">
+	                 	<form:input path="homePhone" cssClass="form-control" maxlength="50"/>
+	                 	<form:errors path="homePhone" cssClass="error" />
 	                 </div>
 	             </div>
 	             <div class="form-group">
 	                <label class="col-md-2 control-label text-right">주소</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control academy-address1" readonly="readonly"
-								required="required">
+							<form:input path="address1" cssClass="form-control academy-address1" maxlength="100" readonly="true" required="required"/>
 						</div>
 						<div class="col-md-3">
 							<button type="button" class="btn btn-default" id="find-address">주소찾기</button>
@@ -83,34 +88,40 @@
 	             <div class="form-group">
 						<label class="col-md-2 control-label"></label>
 						<div class="col-md-7">
-							<input type="text" class="form-control">
+							<form:input path="address2" cssClass="form-control" maxlength="100"/>
 						</div>
 	             </div>
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">이메일</label>
 	                 <div class="col-md-5">
-	                     <input type="text" class="form-control">
+	                     <form:input path="email" cssClass="form-control" maxlength="100"/>
+	                     <form:errors path="email" cssClass="error" />
 	                 </div>
 	             </div>
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">학부모(부)</label>
 	                 <div class="col-md-4">
-	                     <input type="text" class="form-control">
+	                     <form:input path="father" cssClass="form-control" maxlength="20"/>
 	                 </div>
 	                 <label class="col-md-2 control-label">연락처</label>
 	                 <div class="col-md-4">
-	                     <input type="text" class="form-control">
+	                     <form:input path="fathersPhone" cssClass="form-control" maxlength="20"/>
+	                     <form:errors path="fathersPhone" cssClass="error" />
 	                 </div>
 	             </div>
 	             <div class="form-group">
 	                 <label class="col-md-2 control-label">학부모(모)</label>
 	                 <div class="col-md-4">
-	                     <input type="text" class="form-control">
+	                     <form:input path="mother" cssClass="form-control" maxlength="20"/>
 	                 </div>
 	                 <label class="col-md-2 control-label">연락처</label>
 	                 <div class="col-md-4">
-	                     <input type="text" class="form-control">
+	                     <form:input path="mothersPhone" cssClass="form-control" maxlength="20"/>
+	                     <form:errors path="mothersPhone" cssClass="error" />
 	                 </div>
+	             </div>
+	             <div class="form-group text-center">
+	             	<form:button class="btn btn-danger">Save</form:button>
 	             </div>
 	         </form:form>
 	     </div>

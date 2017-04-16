@@ -12,10 +12,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -185,14 +187,5 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter{
 	public PhPass phPass() {
 		return new PhPass(8);
 	}
-	
-//    @Bean
-//    public MessageSource messageSource() {
-//        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-//        messageSource.setDefaultEncoding("UTF-8");
-//        messageSource.setBasenames("locale/messages");
-//        messageSource.setUseCodeAsDefaultMessage(true);
-//        return messageSource;
-//    }
 
 }

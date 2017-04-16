@@ -90,7 +90,7 @@
                                         <select class="form-control">
                                             <option>활성</option>
                                             <option>폐강</option>
-                                            <optionㄷ대기</option>
+                                            <option>대기</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
