@@ -125,7 +125,7 @@ var app_plugins = {
                 timePicker: true,
                 timePickerIncrement: 30,
                 locale: {
-                    format: 'MM/DD/YYYY h:mm A'
+                    format: 'YYYY-MM-DD h:mm A'
                 }
             });
         }
@@ -146,7 +146,7 @@ var app_plugins = {
         * 
         */
         if($(".bs-datepicker").length > 0){
-            $(".bs-datepicker").datetimepicker({format: "DD/MM/YYYY"});
+            $(".bs-datepicker").datetimepicker({format: "YYYY-MM-DD",  locale: 'ko'});
         }
         
         if($(".bs-datetimepicker").length > 0){
@@ -157,7 +157,7 @@ var app_plugins = {
         }
         
         if($(".bs-datepicker-weekends").length > 0){
-            $(".bs-datepicker-weekends").datetimepicker({format: "DD/MM/YYYY", daysOfWeekDisabled: [0, 6]});
+            $(".bs-datepicker-weekends").datetimepicker({format: "YYYY-MM-DD", daysOfWeekDisabled: [0, 6],  locale: 'ko'});
         }
         
         if($(".bs-datepicker-inline").length > 0){

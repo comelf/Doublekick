@@ -23776,6 +23776,13 @@ body .row > div[class^='col-'] {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.app .app-navigation-horizontal nav > ul > li > ul > li > a.std-add-btn {
+	-webkit-box-shadow: 0px 0px 0px 3px rgba(118, 171, 60, 0.15);
+    -moz-box-shadow: 0px 0px 0px 3px rgba(118, 171, 60, 0.15);
+    box-shadow: 0px 0px 0px 3px rgba(118, 171, 60, 0.15);
+    background: #76AB3C !important;
+    color: #FFF !important;
+}
 .app .app-navigation-horizontal nav > ul > li > ul > li > a:hover {
   color: #1B2431;
   background: #F5F5F5;
@@ -26621,10 +26628,10 @@ input[type="file"] {
   margin: 0px;
 }
 @media (max-width: 992px) {
-  .app .app-content-tabs > ul > li > a {
+  /* .app .app-content-tabs > ul > li > a {
     font-size: 0px;
     text-indent: -9999px;
-  }
+  } */
   .app .app-content-tabs > ul > li > a > span {
     text-indent: initial;
     margin-right: 0px;

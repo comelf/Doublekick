@@ -79,12 +79,13 @@
                                     <li class="nav-li-std">
                                         <a href="#"><span class="icon-users"></span> 학생관리</a>
                                         <ul>
-                                            <li class="li-menu-std"><a href="/academy/student">학생조회</a></li>
-                                            <li class="li-menu-std-lesson"><a href="/academy/student/lesson">수업관리</a></li>
-                                            <li class="li-menu-std-attendance"><a href="/academy/student/attendance">출결관리</a></li>
-                                            <li class="li-menu-std-grade"><a href="/academy/student/grade">성적관리</a></li>
-                                            <li class="li-menu-std-group"><a href="/academy/student/group">단체처리</a></li>
-                                            <li class="li-menu-std-management"><a href="/academy/student/management">학생정보삭제</a></li>
+                                            <li class="li-menu-std"><a href="/academy/${currentAcaBranch.id}/student">학생조회</a></li>
+                                            <li class="li-menu-std-lesson"><a href="/academy/${currentAcaBranch.id}/student/lesson">수업관리</a></li>
+                                            <li class="li-menu-std-attendance"><a href="/academy/${currentAcaBranch.id}/student/attendance">출결관리</a></li>
+                                            <li class="li-menu-std-grade"><a href="/academy/${currentAcaBranch.id}/student/grade">성적관리</a></li>
+                                            <li class="li-menu-std-group"><a href="/academy/${currentAcaBranch.id}/student/group">단체처리</a></li>
+                                            <li class="li-menu-std-management"><a href="/academy/${currentAcaBranch.id}/student/management">학생정보삭제</a></li>
+                                            <li class="li-menu-std-add pull-right"><a href="/academy/${currentAcaBranch.id}/student/add" class="std-add-btn">학생추가</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-li-mgnt">

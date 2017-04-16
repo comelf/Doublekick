@@ -28,20 +28,33 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.resource.ResourceUrlEncodingFilter;
 
+import com.doublekick.interceptor.AcademyInterceptor;
 import com.doublekick.util.PhPass;
 
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-@ComponentScan(basePackages = { "com.doublekick.controller", "com.doublekick.service" })
+@ComponentScan(basePackages = { "com.doublekick.controller", "com.doublekick.service" , "com.doublekick.interceptor"})
 @EnableTransactionManagement(proxyTargetClass = true)
 @EnableJpaRepositories(basePackages = "com.doublekick.repository")
 @Import(value={DKSecurityConfigurer.class, AuthenticationConfiguration.class})
 public class ApplicationConfig extends WebMvcConfigurerAdapter{
 
 	Configure conf = Configure.getInstance();
+	
+	@Bean
+	AcademyInterceptor academyInterceptor(){
+		return new AcademyInterceptor();
+	}
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(academyInterceptor()).addPathPatterns("/academy/**");
+		super.addInterceptors(registry);
+	}
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

@@ -16,22 +16,30 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class AcademyAccountMapping {
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	@ManyToOne
-	@JoinColumn(name="academyId", nullable=false)
-	private Academy academy;
-	
+	@JoinColumn(name = "academyBranchId", nullable = false)
+	private AcademyBranch academyBranch;
+
 	@ManyToOne
-	@JoinColumn(name="accountId", nullable=false)
+	@JoinColumn(name = "accountId", nullable = false)
 	private Account account;
-	
+
 	@ManyToOne
-	@JoinColumn(name="accountTypeId", nullable=false)
+	@JoinColumn(name = "accountTypeId", nullable = false)
 	AcademyAccountType accountType;
-	
+
 	@ManyToOne
-	@JoinColumn(name="academyTypeId", nullable=false)
+	@JoinColumn(name = "academyTypeId", nullable = false)
 	AcademyType academyType;
+
+	@Override
+	public String toString() {
+		return "AcademyAccountMapping [academyBranch=" + academyBranch + ", account=" + account + ", accountType="
+				+ accountType + ", academyType=" + academyType + "]";
+	}
+
 }

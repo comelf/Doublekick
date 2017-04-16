@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class AcademyType {
+
+	public static final String MUSIC = "music";
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -23,4 +26,8 @@ public class AcademyType {
 	@Column(nullable = false)
 	private String name;
 	
+	public AcademyType(String textKey, String name) {
+		this.textKey = textKey;
+		this.name = name;
+	}
 }

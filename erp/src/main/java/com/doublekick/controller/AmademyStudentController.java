@@ -1,32 +1,42 @@
 package com.doublekick.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.doublekick.repository.AccountRepository;
+import com.doublekick.entity.academy.Student;
+import com.doublekick.service.StudentService;
 
 @Controller
 public class AmademyStudentController {
 	
 	@Autowired
-	AccountRepository accountRepo;
+	StudentService studentService;
+	
+	
 	
 	/*
 	 * 학생관리 - 학생 조회
 	 */
-	@RequestMapping(value="/academy/student", method=RequestMethod.GET)
-	public String academyStudent(HttpServletRequest request){
+	@RequestMapping(value="/academy/{branchId}/student", method=RequestMethod.GET)
+	public String academyStudent(@PathParam("branchId")Integer branchId, HttpServletRequest request){
+		
+		List<Student> studentList = studentService.getAllAcademyStudent(branchId);
+		
 		return "academy/student/info";
 	}
 	
 	/*
 	 * 학생관리 - 수업관리
 	 */
-	@RequestMapping(value="/academy/student/lesson", method=RequestMethod.GET)
+	@RequestMapping(value="/academy/{branchId}/student/lesson", method=RequestMethod.GET)
 	public String academyStudentLesson(HttpServletRequest request){
 		return "academy/student/lesson";
 	}
@@ -34,7 +44,7 @@ public class AmademyStudentController {
 	/*
 	 * 학생관리 - 출결관리
 	 */
-	@RequestMapping(value="/academy/student/attendance", method=RequestMethod.GET)
+	@RequestMapping(value="/academy/{branchId}/student/attendance", method=RequestMethod.GET)
 	public String academyStudentAttendance(HttpServletRequest request){
 		return "academy/student/attendance";
 	}
@@ -42,7 +52,7 @@ public class AmademyStudentController {
 	/*
 	 * 학생관리 - 성적관리
 	 */
-	@RequestMapping(value="/academy/student/grade", method=RequestMethod.GET)
+	@RequestMapping(value="/academy/{branchId}/student/grade", method=RequestMethod.GET)
 	public String academyStudentGrade(HttpServletRequest request){
 		return "academy/student/grade";
 	}
@@ -50,7 +60,7 @@ public class AmademyStudentController {
 	/*
 	 * 학생관리 - 단체처리
 	 */
-	@RequestMapping(value="/academy/student/group", method=RequestMethod.GET)
+	@RequestMapping(value="/academy/{branchId}/student/group", method=RequestMethod.GET)
 	public String academyStudentGroup(HttpServletRequest request){
 		return "academy/student/group";
 	}
@@ -58,11 +68,20 @@ public class AmademyStudentController {
 	/*
 	 * 학생관리 - 학생정보삭제
 	 */
-	@RequestMapping(value="/academy/student/management", method=RequestMethod.GET)
+	@RequestMapping(value="/academy/{branchId}/student/management", method=RequestMethod.GET)
 	public String academyStudentManagement(HttpServletRequest request){
 		return "academy/student/management";
 	}
 	
+	
+	/*
+	 * 학생관리 - 학생 추가
+	 */
+	@RequestMapping(value="/academy/{branchId}/student/add", method=RequestMethod.GET)
+	public String academyStudentAdd(@PathParam("branchId")Integer branchId, Model model, HttpServletRequest request){
+		model.addAttribute("student", new Student());
+		return "academy/student/add";
+	}
 	
 	
 	/*

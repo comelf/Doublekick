@@ -32,7 +32,7 @@ public class Student {
 	private String name;
 	
 	@Column(nullable = false)
-	private int gender;
+	private String gender;
 	
 	private String school;
 	

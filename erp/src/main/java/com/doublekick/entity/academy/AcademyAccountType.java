@@ -14,9 +14,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AcademyAccountType {
 	
-	public static String OWNER ="owner";
-	public static String TEACHER ="teacher";
-	public static String MANAGER ="manager";
+	public static final String ADMIN = "admin";
+	public static final String OWNER ="owner";
+	public static final String TEACHER ="teacher";
+	public static final String MANAGER ="manager";
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -27,4 +28,8 @@ public class AcademyAccountType {
 	@Column(nullable = false)
 	private String name;
 	
+	public AcademyAccountType(String textKey, String name) {
+		this.textKey = textKey;
+		this.name = name;
+	}
 }
