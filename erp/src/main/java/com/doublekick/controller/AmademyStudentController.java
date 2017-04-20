@@ -3,8 +3,8 @@ package com.doublekick.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.doublekick.R;
+import com.doublekick.entity.academy.AcademyBranch;
 import com.doublekick.entity.academy.Student;
 import com.doublekick.service.StudentService;
 
@@ -33,10 +36,9 @@ public class AmademyStudentController {
 	 * 학생관리 - 학생 조회
 	 */
 	@RequestMapping(value="/academy/{branchId}/student", method=RequestMethod.GET)
-	public String academyStudent(@PathParam("branchId")Integer branchId, HttpServletRequest request){
-		
+	public String academyStudent(@PathVariable("branchId")Integer branchId, HttpServletRequest request, Model model){
 		List<Student> studentList = studentService.getAllAcademyStudent(branchId);
-		
+		model.addAttribute("studentList", studentList);
 		return "academy/student/info";
 	}
 	
@@ -85,13 +87,13 @@ public class AmademyStudentController {
 	 * 학생관리 - 학생 추가
 	 */
 	@RequestMapping(value="/academy/{branchId}/student/add", method=RequestMethod.GET)
-	public String academyStudentAdd(@PathParam("branchId")Integer branchId, Model model, HttpServletRequest request){
+	public String academyStudentAdd(@PathVariable("branchId")Integer branchId, Model model, HttpServletRequest request){
 		model.addAttribute("student", new Student());
 		return "academy/student/add";
 	}
 	
 	@RequestMapping(value="/academy/{branchId}/student/add", method=RequestMethod.POST)
-	public String academyStudentAdd(@PathParam("branchId")Integer branchId, @Valid Student student, BindingResult bindingResult, Model model, HttpServletRequest request){
+	public String academyStudentAdd(@PathVariable("branchId")Integer branchId, @Valid Student student, BindingResult bindingResult, Model model, HttpServletRequest request, HttpSession session){
 		
 		if(bindingResult.hasErrors()){
 			List<ObjectError> errors = bindingResult.getAllErrors();
@@ -100,10 +102,18 @@ public class AmademyStudentController {
 			}
 			return "academy/student/add";
 		}
+		AcademyBranch branch = (AcademyBranch) session.getAttribute(R.CURRENT_ACADEMY_BRANCH);
+		student.setAcademyBranch(branch);
 		
-		System.out.println(student);
+		Student saved = studentService.addStudentWithBranch(student);
 		
-		return "academy/student/add";
+		if( saved != null){
+			
+		}else{
+			
+		}
+		System.out.println(saved);
+		return "academy/student/add";		
 	}
 	
 	/*

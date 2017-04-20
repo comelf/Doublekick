@@ -1,3 +1,7 @@
+.cursor-pointer{
+	cursor: pointer;
+}
+
 .app .academy-student-add .control-label{
 	text-align: right;
 }

@@ -19,7 +19,7 @@
 					<div class="row margin-bottom-15">
 					        <div class="form-group">
 					            <div class="input-group">
-					                <input type="text" class="form-control text-bold input-sm" placeholder="Keyword..." value="고길동">
+					                <input type="text" class="form-control text-bold input-sm" placeholder="Keyword..." value="">
 					                <div class="input-group-btn">
 					                    <button class="btn btn-default btn-sm margin-top-0 margin-bottom-0">Search</button>
 					                </div>
@@ -29,25 +29,15 @@
 					</div>
 					<div class="row">
 						<div class="block-content">
-			                 <div class="list-group">                                        
-			                    <div class="list-group-item text-sm active">
-			                    	<div class="row">
-			                    		<div class="col-md-5">고길동</div>
-			                    		<div class="col-md-7 text-center">일번 고등학교</div>
-			                    	</div>
-			                    </div>
-			                    <div class="list-group-item text-sm">
-			                    	<div class="row">
-			                    		<div class="col-md-5">고길동</div>
-			                    		<div class="col-md-7 text-center">이번 고등학교</div>
-			                    	</div>
-			                    </div>
-			                    <div class="list-group-item text-sm">
-			                    	<div class="row">
-			                    		<div class="col-md-5">고길동</div>
-			                    		<div class="col-md-7 text-center">삼번 고등학교</div>
-			                    	</div>
-			                    </div>                                                                                                                                                                
+			                 <div class="list-group student-list">           
+			                 	<c:forEach items="${ studentList }" var="student">
+			                 		<div class="list-group-item text-sm cursor-pointer" data-id="${student.id}"> <!-- active -->
+				                    	<div class="row">
+				                    		<div class="col-md-5">${student.name}</div>
+				                    		<div class="col-md-7 text-center">${student.school}</div>
+				                    	</div>
+				                    </div>
+			                 	</c:forEach>                             
 			                 </div> 
 				         </div>
 					</div>
@@ -194,6 +184,16 @@
 			$('.app-navigation-horizontal .li-menu-std').addClass('active');
 			
 			$('.app-content-tabs a:first').tab('show');
+			
+			$(".list-group.student-list").off().on("click", function(e){
+				$(".list-group.student-list .list-group-item").removeClass('active');
+				var target = $(e.target);
+				var item = target.closest('.list-group-item');
+				item.addClass("active");
+				console.log(item.data('id'));
+				
+			});
+			
 		});
 	</script>
 </content>
