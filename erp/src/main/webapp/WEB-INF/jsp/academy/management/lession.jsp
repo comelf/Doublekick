@@ -16,28 +16,16 @@
 	    			</div>
 		        </div>
 				<div class="block-content">
-	                 <div class="list-group">                              
-	                    <div class="list-group-item text-sm active">
-	                    	<div class="row">
-	                    		<div class="col-md-5">보컬<span class="badge pull-right">2</span></div>
-	                    		<div class="pull-right" style="margin-left: 5px;">삭제</div>
-	                    		<div class="pull-right">편집</div>
-	                    	</div>
-	                    </div>
-	                    <div class="list-group-item text-sm">
-	                    	<div class="row">
-	                    		<div class="col-md-5">오디션<span class="badge pull-right">2</span></div>
-	                    		<div class="pull-right" style="margin-left: 5px;">삭제</div>
-	                    		<div class="pull-right">편집</div>
-	                    	</div>
-	                    </div>
-	                    <div class="list-group-item text-sm">
-	                    	<div class="row">
-	                    		<div class="col-md-5">힙합<span class="badge pull-right">5</span></div>
-	                    		<div class="pull-right" style="margin-left: 5px;">삭제</div>
-	                    		<div class="pull-right">편집</div>
-	                    	</div>
-	                    </div>
+	                 <div class="list-group">  
+	                 	<c:forEach items="${category}" var="c">
+							<div class="list-group-item text-sm">
+		                    	<div class="row" data-id="${c.id}">
+		                    		<div class="col-md-5">${c.name}<span class="badge pull-right">2</span></div>
+		                    		<div class="pull-right" style="margin-left: 5px;"><a>삭제</a></div>
+		                    		<div class="pull-right"><a>편집</a></div>
+		                    	</div>
+		                    </div>
+						</c:forEach>                            
 	                 </div> 
 		         </div>
 			</div>

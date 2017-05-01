@@ -14,7 +14,7 @@ import com.doublekick.interceptor.BadAcademyAccessExection;
 import com.doublekick.repository.AccountRepository;
 
 @Controller
-public class AmademySystemController {
+public class AcademySystemController {
 	
 	@Autowired
 	AccountRepository accountRepo;

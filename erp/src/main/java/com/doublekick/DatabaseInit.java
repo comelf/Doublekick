@@ -14,16 +14,20 @@ import com.doublekick.entity.academy.Academy;
 import com.doublekick.entity.academy.AcademyAccountMapping;
 import com.doublekick.entity.academy.AcademyAccountType;
 import com.doublekick.entity.academy.AcademyBranch;
+import com.doublekick.entity.academy.AcademyLession;
 import com.doublekick.entity.academy.AcademyType;
+import com.doublekick.entity.academy.LessionCategory;
 import com.doublekick.entity.academy.Student;
 import com.doublekick.repository.AcademyAccountMappingRepository;
 import com.doublekick.repository.AcademyAccountTypeRepository;
 import com.doublekick.repository.AcademyBranchRepository;
+import com.doublekick.repository.AcademyLessionRepository;
 import com.doublekick.repository.AcademyRepository;
 import com.doublekick.repository.AcademyStudentRepository;
 import com.doublekick.repository.AcademyTypeRepository;
 import com.doublekick.repository.AccountRepository;
 import com.doublekick.repository.AccountStatusRepository;
+import com.doublekick.repository.LessionCategoryRepository;
 import com.doublekick.util.PhPass;
 
 public class DatabaseInit {
@@ -55,6 +59,13 @@ public class DatabaseInit {
 	@Autowired
 	AcademyStudentRepository studentRepo;
 	
+	@Autowired
+	LessionCategoryRepository lessionCategoryRepo;
+	
+	@Autowired
+	AcademyLessionRepository lessionRepo;
+	
+	
 	@PostConstruct
 	public void init() {
 		userStatusInit();
@@ -64,6 +75,46 @@ public class DatabaseInit {
 		userInti();
 		
 		studentListInit();
+		lessionListInit();
+	}
+
+	private void lessionListInit() {
+		Academy academy = academyRepo.findByDomain("admin");
+		AcademyBranch branch = academyBranchRepo.findOneByAcademyAndHead(academy, true);
+		
+		if(branch == null){
+			System.out.println("Database init :  academy Branch is NULL!!");
+			return;
+		}
+		LessionCategory category1 = lessionCategoryRepo.findByTextKeyAndAcademyBranch("test1", branch);
+		if(category1 == null){
+			category1 = new LessionCategory("test1","보컬", branch);
+			lessionCategoryRepo.saveAndFlush(category1);
+		}
+		LessionCategory category2 = lessionCategoryRepo.findByTextKeyAndAcademyBranch("test2", branch);
+		if(category2 == null){
+			category2 = new LessionCategory("test2","오디션", branch);
+			lessionCategoryRepo.saveAndFlush(category2);
+		}
+		LessionCategory category3 = lessionCategoryRepo.findByTextKeyAndAcademyBranch("test3", branch);
+		if(category3 == null){
+			category3 = new LessionCategory("test3","댄스", branch);
+			lessionCategoryRepo.saveAndFlush(category3);
+		}
+		
+		AcademyLession lession1 = lessionRepo.findByNameAndAcademyBranch("보컬A", branch);
+		if(lession1 == null){
+			lession1 = new AcademyLession();
+			lession1.setLessionCategory(category1);
+			lession1.setCreateDate(new Date());
+			lession1.setAcademyBranch(branch);
+			lession1.setName("보컬A");
+			lession1.setLessionTime(2);
+			lession1.setLessionMethod("group");
+			lession1.setLessionFee(20000);
+			lessionRepo.saveAndFlush(lession1);
+		}
+		
 	}
 
 	private void accountTypeInit() {

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.doublekick.repository.AccountRepository;
 
 @Controller
-public class AmademyPaymentController {
+public class AcademyPaymentController {
 	
 	@Autowired
 	AccountRepository accountRepo;

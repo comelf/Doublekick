@@ -91,19 +91,19 @@
                                     <li class="nav-li-mgnt">
                                         <a href="#"><span class="icon-apartment"></span> 학원관리</a>                
                                         <ul>
-                                        	<li class="li-aca-mgnt-lession"><a href="/academy/management/lession">수업관리</a></li>
-                                            <li class="li-aca-mgnt-package"><a href="/academy/management/package">패키지관리</a></li>
-                                            <li class="li-aca-mgnt-teacher"><a href="/academy/management/teacher">강사관리</a></li>
-                                            <li class="li-aca-mgnt-room"><a href="/academy/management/room">연습실 현황</a></li>
-                                            <li class="li-aca-mgnt-schedule"><a href="/academy/management/schedule">스케줄 관리</a></li>
+                                        	<li class="li-aca-mgnt-lession"><a href="/academy/${currentAcaBranch.id}/management/lession">수업관리</a></li>
+                                            <li class="li-aca-mgnt-package"><a href="/academy/${currentAcaBranch.id}/management/package">패키지관리</a></li>
+                                            <li class="li-aca-mgnt-teacher"><a href="/academy/${currentAcaBranch.id}/management/teacher">강사관리</a></li>
+                                            <li class="li-aca-mgnt-room"><a href="/academy/${currentAcaBranch.id}/management/room">연습실 현황</a></li>
+                                            <li class="li-aca-mgnt-schedule"><a href="/academy/${currentAcaBranch.id}/management/schedule">스케줄 관리</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-li-acc">
                                         <a href="#"><span class="icon-laptop"></span> 수납관리</a>                
                                         <ul>
-                                            <li class="li-aca-mgnt-payment"><a href="/academy/payment">수납현황</a></li>
-                                            <li class="li-aca-mgnt-default"><a href="/academy/default">미납현황</a></li>
-                                            <li class="li-aca-mgnt-accountring"><a href="/academy/accounting">회계분석</a></li>
+                                            <li class="li-aca-mgnt-payment"><a href="/academy/${currentAcaBranch.id}/payment">수납현황</a></li>
+                                            <li class="li-aca-mgnt-default"><a href="/academy/${currentAcaBranch.id}/default">미납현황</a></li>
+                                            <li class="li-aca-mgnt-accountring"><a href="/academy/${currentAcaBranch.id}/accounting">회계분석</a></li>
                                         </ul>
                                     </li>
                                     <li>

@@ -23,9 +23,9 @@ import com.doublekick.entity.academy.Student;
 import com.doublekick.service.StudentService;
 
 @Controller
-public class AmademyStudentController {
+public class AcademyStudentController {
 	
-	private Logger log = LoggerFactory.getLogger(AmademyStudentController.class);
+	private Logger log = LoggerFactory.getLogger(AcademyStudentController.class);
 	
 	@Autowired
 	StudentService studentService;
